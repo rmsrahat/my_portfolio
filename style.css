@@ -1,0 +1,593 @@
+/* Universal Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+/* Background Design */
+body {
+  background: linear-gradient(135deg, #020024 0%, #090979 35%, #00d4ff 100%);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Header & Navbar Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 25px;
+  color: #fff;
+  font-weight: 600;
+  cursor: default;
+}
+
+.navbar a {
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #00d4ff;
+}
+
+/* --- SECTION GENERAL SETTINGS --- */
+section {
+  min-height: 100vh;
+  padding: 0 10%;
+  scroll-margin-top: 80px;
+}
+
+/* --- HOME SECTION STYLES --- */
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-content {
+  max-width: 600px;
+}
+
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2) {
+  margin-bottom: 30px;
+}
+
+.home-content h3 span {
+  color: #00d4ff;
+}
+
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+}
+
+.home-content p {
+  font-size: 16px;
+}
+
+.social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #00d4ff;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #00d4ff;
+  margin: 30px 15px 30px 0;
+  transition: 0.5s ease;
+}
+
+.social-media a:hover {
+  background: #00d4ff;
+  color: #020024;
+  box-shadow: 0 0 20px #00d4ff;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #00d4ff;
+  border-radius: 40px;
+  box-shadow: 0 0 10px #00d4ff;
+  font-size: 16px;
+  color: #020024;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 0 0 20px #00d4ff;
+}
+
+.home-img {
+  width: 40vw;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home-img img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #00d4ff;
+  animation: zoomIn 1s ease forwards;
+  animation-delay: 1s;
+}
+
+/* --- ABOUT SECTION STYLES --- */
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.heading {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.heading span {
+  color: #00d4ff;
+}
+
+.about-img {
+  position: relative;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.about-img img {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  border: 3px solid #00d4ff;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.circle-spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #00d4ff;
+  border-right: 5px solid #00d4ff;
+  animation: spin 8s linear infinite;
+  z-index: 0;
+}
+
+.about-content {
+  max-width: 700px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.about-content h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+}
+
+/* --- SKILLS SECTION STYLES (Fixed Circles & Neon) --- */
+.skills {
+  min-height: auto;
+  padding-bottom: 7rem;
+  padding-top: 80px;
+}
+
+.skills .heading {
+  margin-bottom: 3rem;
+}
+
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+.skills-column {
+  flex: 1 1 30rem;
+}
+
+.skills-column .title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.skills-box {
+  position: relative;
+  border-left: 2px solid #00d4ff;
+}
+
+.skills-box .skills-content {
+  position: relative;
+  padding-left: 2rem;
+}
+
+/* স্কিল সার্কেল ফিক্স করা হয়েছে */
+.skills-box .skills-content::before {
+  content: "";
+  position: absolute;
+  top: 0; /* সার্কেলটা কন্টেন্টের টপে থাকবে */
+  left: -12.5px; /* বর্ডারের একদম মাঝখানে বসানোর জন্য */
+  width: 1.3rem; /* সাইজ ছোট করা হয়েছে */
+  height: 1.3rem;
+  background: #00d4ff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00d4ff; /* নিয়ন গ্লো */
+}
+
+.skills-content .progress {
+  padding: 1rem 0;
+}
+
+.skills-content .progress h3 {
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills-content .progress .bar {
+  height: 1.5rem;
+  border-radius: 6px;
+  border: 2px solid #00d4ff;
+  padding: 3px;
+  margin: 0.5rem 0;
+}
+
+.skills-content .progress .bar span {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: #00d4ff;
+  width: 0;
+  box-shadow: 0 0 10px #00d4ff; /* স্কিল বারে নিয়ন ইফেক্ট */
+  animation: barFill 2s ease forwards;
+  width: var(--i);
+  max-width: 0;
+  animation: fillBar 2s forwards;
+}
+
+/* --- PORTFOLIO SECTION STYLES (Neon & Shadow Added) --- */
+.portfolio {
+  padding-bottom: 10rem;
+}
+
+.portfolio h2 {
+  margin-bottom: 4rem;
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.portfolio-box {
+  position: relative;
+  border-radius: 2rem;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4); /* নিয়ন শ্যাডো */
+  border: 2px solid #00d4ff; /* নিয়ন বর্ডার */
+  overflow: hidden;
+  display: flex;
+  height: 300px;
+  transition: 0.5s;
+}
+
+/* পোর্টেফোলিও হোভার ইফেক্ট */
+.portfolio-box:hover {
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.8);
+  transform: scale(1.02);
+}
+
+.portfolio-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.portfolio-box:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), #00d4ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 4rem;
+  transform: translateY(100%);
+  transition: 0.5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+  transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+  font-size: 2rem;
+  color: #020024;
+  font-weight: 700;
+}
+
+.portfolio-layer p {
+  font-size: 1.2rem;
+  margin: 0.3rem 0 1rem;
+  color: #020024;
+  font-weight: 500;
+}
+
+.portfolio-layer a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.portfolio-layer a i {
+  font-size: 20px;
+  color: #020024;
+}
+
+/* --- CONTACT SECTION STYLES (Permanent Neon) --- */
+.contact {
+  min-height: auto;
+  padding-bottom: 7rem;
+  padding-top: 80px;
+}
+
+.contact h2 {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 50rem;
+  margin: 1rem auto;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1rem;
+  color: #fff;
+  background: #112e42;
+  border-radius: 0.6rem;
+  border: 2px solid #00d4ff; /* পারমানেন্ট বর্ডার */
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4); /* পারমানেন্ট শ্যাডো */
+  margin: 0;
+  transition: 0.3s ease;
+}
+
+.contact form .input-box input:focus,
+.contact form textarea:focus {
+  background: #0e2433;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+}
+
+.contact form .input-box input {
+  width: 48%;
+}
+
+.contact form textarea {
+  resize: none;
+  margin-top: 0.5rem;
+}
+
+.contact form .btn {
+  margin-top: 2rem;
+  cursor: pointer;
+  background: #00d4ff;
+  color: #020024;
+  font-weight: 600;
+  border: 2px solid #00d4ff;
+  box-shadow: 0 0 15px #00d4ff;
+  transition: 0.3s;
+}
+
+.contact form .btn:hover {
+  background: transparent;
+  color: #00d4ff;
+  box-shadow: 0 0 25px #00d4ff;
+}
+
+/* --- FOOTER STYLES --- */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 9%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.footer-text p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+}
+
+.footer-iconTop a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  background: #00d4ff;
+  border-radius: 0.8rem;
+  transition: 0.5s ease;
+}
+
+.footer-iconTop a:hover {
+  box-shadow: 0 0 1rem #00d4ff;
+}
+
+.footer-iconTop a i {
+  font-size: 2.4rem;
+  color: #020024;
+}
+
+/* --- RESPONSIVE QUERIES --- */
+@media (max-height: 800px) {
+  .about {
+    padding-top: 60px;
+  }
+  .heading {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .about-img {
+    width: 12rem;
+    height: 12rem;
+    margin-bottom: 1rem;
+  }
+  .about-content h3 {
+    font-size: 1.5rem;
+  }
+  .about-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 15px 5%;
+  }
+  section {
+    padding: 50px 5% 20px;
+  }
+
+  .home {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  .home-img {
+    width: 70%;
+  }
+  .about {
+    padding-top: 80px;
+  }
+  .skills-row {
+    gap: 3rem;
+  }
+
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    padding: 50px 5%;
+  }
+  .contact form .input-box {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .contact form .input-box input {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* অ্যানিমেশন */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes fillBar {
+  100% {
+    max-width: var(--i);
+    width: var(--i);
+  }
+}
