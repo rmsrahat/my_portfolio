@@ -224,7 +224,7 @@ section {
   margin-bottom: 2rem;
 }
 
-/* --- SKILLS SECTION STYLES (Fixed Circles & Neon) --- */
+/* --- SKILLS SECTION STYLES --- */
 .skills {
   min-height: auto;
   padding-bottom: 7rem;
@@ -260,17 +260,16 @@ section {
   padding-left: 2rem;
 }
 
-/* স্কিল সার্কেল ফিক্স করা হয়েছে */
 .skills-box .skills-content::before {
   content: "";
   position: absolute;
-  top: 0; /* সার্কেলটা কন্টেন্টের টপে থাকবে */
-  left: -12.5px; /* বর্ডারের একদম মাঝখানে বসানোর জন্য */
-  width: 1.3rem; /* সাইজ ছোট করা হয়েছে */
+  top: 0;
+  left: -12.5px;
+  width: 1.3rem;
   height: 1.3rem;
   background: #00d4ff;
   border-radius: 50%;
-  box-shadow: 0 0 10px #00d4ff; /* নিয়ন গ্লো */
+  box-shadow: 0 0 10px #00d4ff;
 }
 
 .skills-content .progress {
@@ -297,14 +296,14 @@ section {
   border-radius: 4px;
   background: #00d4ff;
   width: 0;
-  box-shadow: 0 0 10px #00d4ff; /* স্কিল বারে নিয়ন ইফেক্ট */
+  box-shadow: 0 0 10px #00d4ff;
   animation: barFill 2s ease forwards;
   width: var(--i);
   max-width: 0;
   animation: fillBar 2s forwards;
 }
 
-/* --- PORTFOLIO SECTION STYLES (Neon & Shadow Added) --- */
+/* --- PORTFOLIO SECTION STYLES --- */
 .portfolio {
   padding-bottom: 10rem;
 }
@@ -323,15 +322,14 @@ section {
 .portfolio-box {
   position: relative;
   border-radius: 2rem;
-  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4); /* নিয়ন শ্যাডো */
-  border: 2px solid #00d4ff; /* নিয়ন বর্ডার */
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+  border: 2px solid #00d4ff;
   overflow: hidden;
   display: flex;
   height: 300px;
   transition: 0.5s;
 }
 
-/* পোর্টেফোলিও হোভার ইফেক্ট */
 .portfolio-box:hover {
   box-shadow: 0 0 25px rgba(0, 212, 255, 0.8);
   transform: scale(1.02);
@@ -397,7 +395,7 @@ section {
   color: #020024;
 }
 
-/* --- CONTACT SECTION STYLES (Permanent Neon) --- */
+/* --- CONTACT SECTION STYLES --- */
 .contact {
   min-height: auto;
   padding-bottom: 7rem;
@@ -432,8 +430,8 @@ section {
   color: #fff;
   background: #112e42;
   border-radius: 0.6rem;
-  border: 2px solid #00d4ff; /* পারমানেন্ট বর্ডার */
-  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4); /* পারমানেন্ট শ্যাডো */
+  border: 2px solid #00d4ff;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
   margin: 0;
   transition: 0.3s ease;
 }
@@ -530,18 +528,14 @@ section {
 
 @media (max-width: 991px) {
   .header {
-    padding: 15px 5%;
+    padding: 10px 5%;
   }
   section {
     padding: 50px 5% 20px;
   }
 
   .home {
-    flex-direction: column-reverse;
     gap: 1rem;
-  }
-  .home-img {
-    width: 70%;
   }
   .about {
     padding-top: 80px;
@@ -549,7 +543,6 @@ section {
   .skills-row {
     gap: 3rem;
   }
-
   .portfolio-container {
     grid-template-columns: 1fr;
   }
@@ -564,6 +557,114 @@ section {
   .contact form .input-box input {
     width: 100%;
     margin-bottom: 1.5rem;
+  }
+}
+
+/* 🔥 মোবাইল স্পেশাল ফিক্স (সব এক লাইনে & ছোট) 🔥 */
+@media (max-width: 600px) {
+  /* ১. মেনু ফিক্স: সব ১ লাইনে থাকবে */
+  .header {
+    padding: 5px 2%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+  }
+
+  .logo {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row; /* পাশাপাশি */
+    flex-wrap: nowrap; /* ভাঙবে না */
+    justify-content: center; /* মাঝখানে */
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    overflow-x: auto; /* স্ক্রিন ছোট হলে স্ক্রল হবে */
+    padding-bottom: 5px;
+  }
+
+  .navbar a {
+    font-size: 13px; /* ফন্ট ছোট */
+    margin: 0;
+    padding: 5px;
+    white-space: nowrap; /* লেখা ভাঙবে না */
+  }
+
+  /* ২. হোম সেকশন: লেখা বামে, ছবি ডানে (ছোট ভার্সন) */
+  .home {
+    flex-direction: row; /* ল্যাপটপের মতো পাশাপাশি */
+    align-items: center;
+    padding-top: 140px; /* মেনুর জন্য জায়গা */
+    gap: 10px;
+    text-align: left; /* লেখা বামে */
+  }
+
+  .home-content {
+    width: 60%; /* লেখার জায়গা */
+  }
+
+  .home-content h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .home-content h1 {
+    font-size: 22px; /* নামটা ছোট করলাম */
+    line-height: 1.2;
+    margin: 5px 0;
+  }
+
+  .home-content p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  /* বাটন আর আইকন ছোট */
+  .btn {
+    padding: 8px 15px;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .social-media a {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    margin: 10px 5px 0 0;
+  }
+
+  /* ৩. ছবি ফিক্স: ছোট হয়ে ডানে থাকবে */
+  .home-img {
+    width: 40%; /* ছবির জায়গা */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-img img {
+    width: 100%;
+    max-width: 140px; /* ছবি লিমিট */
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #00d4ff;
+  }
+
+  /* ৪. অন্যান্য সেকশন ফিক্স */
+  .about-img {
+    width: 10rem;
+    height: 10rem;
+  }
+  .heading {
+    font-size: 2.2rem;
+  }
+  .skills-row {
+    gap: 2rem;
   }
 }
 
