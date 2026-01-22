@@ -1,4 +1,3 @@
-/* Universal Reset & Fonts */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +9,6 @@
   scroll-behavior: smooth;
 }
 
-/* Background Design */
 body {
   background: linear-gradient(135deg, #020024 0%, #090979 35%, #00d4ff 100%);
   background-attachment: fixed;
@@ -19,7 +17,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Header & Navbar Styles */
 .header {
   position: fixed;
   top: 0;
@@ -55,14 +52,12 @@ body {
   color: #00d4ff;
 }
 
-/* --- SECTION GENERAL SETTINGS --- */
 section {
   min-height: 100vh;
   padding: 0 10%;
   scroll-margin-top: 80px;
 }
 
-/* --- HOME SECTION STYLES --- */
 .home {
   display: flex;
   justify-content: space-between;
@@ -148,7 +143,6 @@ section {
   animation: zoomIn 1s ease forwards;
 }
 
-/* --- ABOUT SECTION STYLES --- */
 .about {
   display: flex;
   flex-direction: column;
@@ -225,7 +219,6 @@ section {
   margin-bottom: 2rem;
 }
 
-/* --- SKILLS SECTION STYLES --- */
 .skills {
   min-height: auto;
   padding-bottom: 7rem;
@@ -304,7 +297,6 @@ section {
   animation: fillBar 2s forwards;
 }
 
-/* --- PORTFOLIO SECTION STYLES (Glass/Blur Effect) --- */
 .portfolio {
   padding-bottom: 10rem;
 }
@@ -329,8 +321,6 @@ section {
   display: flex;
   height: 300px;
   transition: 0.5s;
-  
-  /* Glassmorphism Blur Effect */
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -401,7 +391,6 @@ section {
   color: #020024;
 }
 
-/* --- CONTACT SECTION STYLES --- */
 .contact {
   min-height: auto;
   padding-bottom: 7rem;
@@ -413,23 +402,24 @@ section {
   text-align: center;
 }
 
-/* Contact Info Styles */
 .contact-info {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
+
 .info-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.2rem;
-    color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  color: #fff;
 }
+
 .info-item i {
-    color: #00d4ff;
+  color: #00d4ff;
 }
 
 .contact form {
@@ -493,7 +483,6 @@ section {
   box-shadow: 0 0 25px #00d4ff;
 }
 
-/* --- FOOTER STYLES --- */
 .footer {
   display: flex;
   justify-content: space-between;
@@ -527,119 +516,214 @@ section {
   color: #020024;
 }
 
-/* --- RESPONSIVE QUERIES --- */
-
-/* Tablet & Smaller Laptops */
 @media (max-width: 991px) {
-  .header { padding: 2rem 5%; }
-  section { padding: 50px 5%; }
-  .home {
-      flex-direction: column;
-      justify-content: center;
-      gap: 2rem;
-      text-align: center;
-      padding-top: 10rem;
+  .header {
+    padding: 2rem 5%;
   }
-  .home-content { margin-top: 2rem; }
-  .home-img { width: 100%; display: flex; justify-content: center; }
-  .home-img img { width: 350px; height: 350px; }
-  .portfolio-container { grid-template-columns: 1fr 1fr; }
-  .contact form .input-box { flex-direction: column; margin-bottom: 0; }
-  .contact form .input-box input { width: 100%; margin-bottom: 1.5rem; }
+  section {
+    padding: 50px 5%;
+  }
+  .home {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    padding-top: 10rem;
+  }
+  .home-content {
+    margin-top: 2rem;
+  }
+  .home-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .home-img img {
+    width: 350px;
+    height: 350px;
+  }
+  .portfolio-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact form .input-box {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .contact form .input-box input {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
 }
 
-/* 🔥 MOBILE VIEW (PHONE) - FINAL FIX 🔥 */
 @media (max-width: 600px) {
-  
-  /* 1. Menu Fix */
   .header {
     padding: 10px 2%;
     background: rgba(0, 0, 0, 0.95);
-    display: flex; flex-direction: column; justify-content: center; height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
   }
-  .logo { font-size: 20px; margin-bottom: 5px; display: block; text-align: center; }
+  .logo {
+    font-size: 20px;
+    margin-bottom: 5px;
+    display: block;
+    text-align: center;
+  }
   .navbar {
-    display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center;
-    gap: 15px; width: 100%; overflow-x: auto; padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 5px;
   }
-  .navbar a { font-size: 14px; margin: 0; padding: 5px; white-space: nowrap; }
-
-  /* 2. Home Section (Image on Top, Glowing) */
+  .navbar a {
+    font-size: 14px;
+    margin: 0;
+    padding: 5px;
+    white-space: nowrap;
+  }
   .home {
-    flex-direction: column-reverse; /* ছবি উপরে */
-    justify-content: center; align-items: center; text-align: center;
-    padding-top: 140px; gap: 20px;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 140px;
+    gap: 20px;
   }
-
-  .home-content { width: 100%; display: flex; flex-direction: column; align-items: center; }
-  .home-content h1 { font-size: 28px; line-height: 1.2; margin: 10px 0; }
-  .home-content h3 { font-size: 16px; }
-  .home-content p { font-size: 13px; text-align: justify; padding: 0 10px; }
-
-  .btn { width: auto; padding: 10px 25px; margin-top: 10px; }
-  .social-media { justify-content: center; margin-bottom: 20px; }
-  .social-media a { width: 30px; height: 30px; font-size: 14px; margin: 0 5px; }
-
-  .home-img { width: 100%; display: flex; justify-content: center; margin-bottom: 10px; }
+  .home-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home-content h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 10px 0;
+  }
+  .home-content h3 {
+    font-size: 16px;
+  }
+  .home-content p {
+    font-size: 13px;
+    text-align: justify;
+    padding: 0 10px;
+  }
+  .btn {
+    width: auto;
+    padding: 10px 25px;
+    margin-top: 10px;
+  }
+  .social-media {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .social-media a {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    margin: 0 5px;
+  }
+  .home-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
   .home-img img {
-    width: 260px; height: 260px;
-    border-radius: 50%; border: 4px solid #00d4ff;
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5), inset 0 0 20px rgba(0, 212, 255, 0.3);
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 4px solid #00d4ff;
+    box-shadow:
+      0 0 30px rgba(0, 212, 255, 0.5),
+      inset 0 0 20px rgba(0, 212, 255, 0.3);
     animation: floatImage 4s ease-in-out infinite;
   }
-
-  /* 3. About Section FIX: Heading(1) -> Content(2) -> Image(3) */
   .about {
     display: flex;
-    flex-direction: column; /* নরমাল কলাম */
+    flex-direction: column;
     padding-top: 60px;
     gap: 1.5rem;
   }
-  
-  /* হেডিং সবার উপরে */
   .about .heading {
-    order: 1; 
-    font-size: 2.2rem; 
+    order: 1;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
   }
-  
-  /* লেখা মাঝখানে */
   .about-content {
     order: 2;
     text-align: center;
   }
-  
-  /* ছবি সবার নিচে */
   .about-img {
     order: 3;
-    width: 12rem; height: 12rem; 
-    margin: 0 auto; /* মাঝখানে আনার জন্য */
+    width: 12rem;
+    height: 12rem;
+    margin: 0 auto;
   }
-
-  /* 4. Portfolio Stacked */
-  .portfolio-container { grid-template-columns: 1fr; padding: 0 10px; }
-
-  /* 5. Contact Stacked */
-  .contact { padding: 50px 5%; }
-  .contact-info { flex-direction: column; gap: 15px; }
-  .contact form .input-box { flex-direction: column; gap: 15px; }
-  .contact form .input-box input { width: 100%; margin: 0; }
-  .contact form textarea { height: 150px; }
+  .portfolio-container {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+  .contact {
+    padding: 50px 5%;
+  }
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  .contact form .input-box {
+    flex-direction: column;
+    gap: 0;
+  }
+  .contact form .input-box input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .contact form textarea {
+    height: 150px;
+    margin-top: 0;
+  }
 }
 
-/* Animations */
 @keyframes zoomIn {
-  0% { transform: scale(0); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
+
 @keyframes spin {
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
+
 @keyframes floatImage {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
+
 @keyframes fillBar {
-  100% { max-width: var(--i); width: var(--i); }
+  100% {
+    max-width: var(--i);
+    width: var(--i);
+  }
 }
