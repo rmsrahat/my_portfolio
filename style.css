@@ -13,6 +13,8 @@
 /* Background Design */
 body {
   background: linear-gradient(135deg, #020024 0%, #090979 35%, #00d4ff 100%);
+  background-attachment: fixed; /* ফিক্সড গ্রেডিয়েন্ট */
+  background-size: cover;
   color: #fff;
   overflow-x: hidden;
 }
@@ -144,7 +146,6 @@ section {
   border-radius: 50%;
   box-shadow: 0 0 20px #00d4ff;
   animation: zoomIn 1s ease forwards;
-  animation-delay: 1s;
 }
 
 /* --- ABOUT SECTION STYLES --- */
@@ -303,7 +304,7 @@ section {
   animation: fillBar 2s forwards;
 }
 
-/* --- PORTFOLIO SECTION STYLES --- */
+/* --- PORTFOLIO SECTION STYLES (Glass/Blur Effect) --- */
 .portfolio {
   padding-bottom: 10rem;
 }
@@ -328,6 +329,11 @@ section {
   display: flex;
   height: 300px;
   transition: 0.5s;
+
+  /* Glassmorphism Blur Effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .portfolio-box:hover {
@@ -405,6 +411,25 @@ section {
 .contact h2 {
   margin-bottom: 3rem;
   text-align: center;
+}
+
+/* Contact Info Styles */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+.info-item i {
+  color: #00d4ff;
 }
 
 .contact form {
@@ -503,52 +528,36 @@ section {
 }
 
 /* --- RESPONSIVE QUERIES --- */
-@media (max-height: 800px) {
-  .about {
-    padding-top: 60px;
-  }
-  .heading {
-    font-size: 2.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-  .about-img {
-    width: 12rem;
-    height: 12rem;
-    margin-bottom: 1rem;
-  }
-  .about-content h3 {
-    font-size: 1.5rem;
-  }
-  .about-content p {
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-  }
-}
 
+/* Tablet & Smaller Laptops */
 @media (max-width: 991px) {
   .header {
-    padding: 10px 5%;
+    padding: 2rem 5%;
   }
   section {
-    padding: 50px 5% 20px;
+    padding: 50px 5%;
   }
-
   .home {
-    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    padding-top: 10rem;
   }
-  .about {
-    padding-top: 80px;
+  .home-content {
+    margin-top: 2rem;
   }
-  .skills-row {
-    gap: 3rem;
+  .home-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .home-img img {
+    width: 350px;
+    height: 350px;
   }
   .portfolio-container {
-    grid-template-columns: 1fr;
-  }
-
-  .contact {
-    padding: 50px 5%;
+    grid-template-columns: 1fr 1fr;
   }
   .contact form .input-box {
     flex-direction: column;
@@ -560,115 +569,148 @@ section {
   }
 }
 
-/* 🔥 মোবাইল স্পেশাল ফিক্স (সব এক লাইনে & ছোট) 🔥 */
+/* 🔥 MOBILE VIEW (PHONE) - EMILY CLARK STYLE 🔥 */
 @media (max-width: 600px) {
-  /* ১. মেনু ফিক্স: সব ১ লাইনে থাকবে */
+  /* 1. Menu Fix */
   .header {
-    padding: 5px 2%;
+    padding: 10px 2%;
     background: rgba(0, 0, 0, 0.95);
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: auto;
   }
-
   .logo {
     font-size: 20px;
     margin-bottom: 5px;
+    display: block;
+    text-align: center;
   }
-
   .navbar {
     display: flex;
-    flex-direction: row; /* পাশাপাশি */
-    flex-wrap: nowrap; /* ভাঙবে না */
-    justify-content: center; /* মাঝখানে */
-    align-items: center;
-    gap: 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 15px;
     width: 100%;
-    overflow-x: auto; /* স্ক্রিন ছোট হলে স্ক্রল হবে */
+    overflow-x: auto;
     padding-bottom: 5px;
   }
-
   .navbar a {
-    font-size: 13px; /* ফন্ট ছোট */
+    font-size: 14px;
     margin: 0;
     padding: 5px;
-    white-space: nowrap; /* লেখা ভাঙবে না */
+    white-space: nowrap;
   }
 
-  /* ২. হোম সেকশন: লেখা বামে, ছবি ডানে (ছোট ভার্সন) */
+  /* 2. Home Section (Image on Top, Glowing) */
   .home {
-    flex-direction: row; /* ল্যাপটপের মতো পাশাপাশি */
+    flex-direction: column-reverse; /* উল্টে দিলাম: ছবি উপরে */
+    justify-content: center;
     align-items: center;
-    padding-top: 140px; /* মেনুর জন্য জায়গা */
-    gap: 10px;
-    text-align: left; /* লেখা বামে */
+    text-align: center;
+    padding-top: 140px;
+    gap: 20px;
   }
 
   .home-content {
-    width: 60%; /* লেখার জায়গা */
-  }
-
-  .home-content h3 {
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-
-  .home-content h1 {
-    font-size: 22px; /* নামটা ছোট করলাম */
-    line-height: 1.2;
-    margin: 5px 0;
-  }
-
-  .home-content p {
-    font-size: 11px;
-    line-height: 1.4;
-  }
-
-  /* বাটন আর আইকন ছোট */
-  .btn {
-    padding: 8px 15px;
-    font-size: 12px;
-    margin-top: 10px;
-  }
-
-  .social-media a {
-    width: 25px;
-    height: 25px;
-    font-size: 12px;
-    margin: 10px 5px 0 0;
-  }
-
-  /* ৩. ছবি ফিক্স: ছোট হয়ে ডানে থাকবে */
-  .home-img {
-    width: 40%; /* ছবির জায়গা */
+    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
   }
-
-  .home-img img {
-    width: 100%;
-    max-width: 140px; /* ছবি লিমিট */
-    height: auto;
-    border-radius: 50%;
-    border: 2px solid #00d4ff;
+  .home-content h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 10px 0;
+  }
+  .home-content h3 {
+    font-size: 16px;
+  }
+  .home-content p {
+    font-size: 13px;
+    text-align: justify;
+    padding: 0 10px;
   }
 
-  /* ৪. অন্যান্য সেকশন ফিক্স */
+  .btn {
+    width: auto;
+    padding: 10px 25px;
+    margin-top: 10px;
+  }
+  .social-media {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .social-media a {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    margin: 0 5px;
+  }
+
+  /* Glowing Image Style */
+  .home-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .home-img img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 4px solid #00d4ff;
+    box-shadow:
+      0 0 30px rgba(0, 212, 255, 0.5),
+      inset 0 0 20px rgba(0, 212, 255, 0.3);
+    animation: floatImage 4s ease-in-out infinite;
+  }
+
+  /* 3. About Section (Text First, Image Bottom) */
+  .about {
+    flex-direction: column-reverse; /* উল্টে দিলাম: লেখা উপরে */
+    gap: 2rem;
+    padding-top: 60px;
+  }
   .about-img {
-    width: 10rem;
-    height: 10rem;
+    width: 12rem;
+    height: 12rem;
+    margin-top: 1rem;
   }
   .heading {
     font-size: 2.2rem;
+    margin-bottom: 2rem;
   }
-  .skills-row {
-    gap: 2rem;
+
+  /* 4. Portfolio Stacked */
+  .portfolio-container {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  /* 5. Contact Stacked */
+  .contact {
+    padding: 50px 5%;
+  }
+  .contact-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .contact form .input-box {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .contact form .input-box input {
+    width: 100%;
+    margin: 0;
+  }
+  .contact form textarea {
+    height: 150px;
   }
 }
 
-/* অ্যানিমেশন */
+/* Animations */
 @keyframes zoomIn {
   0% {
     transform: scale(0);
@@ -679,13 +721,22 @@ section {
     opacity: 1;
   }
 }
-
 @keyframes spin {
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 @keyframes fillBar {
   100% {
     max-width: var(--i);
