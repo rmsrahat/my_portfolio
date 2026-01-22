@@ -548,7 +548,7 @@ section {
   .contact form .input-box input { width: 100%; margin-bottom: 1.5rem; }
 }
 
-/* 🔥 MOBILE VIEW (PHONE) 🔥 */
+/* 🔥 MOBILE VIEW (PHONE) - FINAL FIX 🔥 */
 @media (max-width: 600px) {
   
   /* 1. Menu Fix */
@@ -580,7 +580,6 @@ section {
   .social-media { justify-content: center; margin-bottom: 20px; }
   .social-media a { width: 30px; height: 30px; font-size: 14px; margin: 0 5px; }
 
-  /* Glowing Image Style */
   .home-img { width: 100%; display: flex; justify-content: center; margin-bottom: 10px; }
   .home-img img {
     width: 260px; height: 260px;
@@ -589,24 +588,33 @@ section {
     animation: floatImage 4s ease-in-out infinite;
   }
 
-  /* 3. About Section FIX: Heading -> Content -> Image */
+  /* 3. About Section FIX: Heading(1) -> Content(2) -> Image(3) */
   .about {
-    flex-direction: column; /* নরমাল অর্ডার */
-    gap: 2rem; padding-top: 60px;
+    display: flex;
+    flex-direction: column; /* নরমাল কলাম */
+    padding-top: 60px;
+    gap: 1.5rem;
   }
   
-  /* অর্ডার সেট করা হচ্ছে */
+  /* হেডিং সবার উপরে */
   .about .heading {
-    order: 1; /* সবার আগে Heading */
+    order: 1; 
+    font-size: 2.2rem; 
+    margin-bottom: 1rem;
   }
+  
+  /* লেখা মাঝখানে */
   .about-content {
-    order: 2; /* তারপর লেখা */
+    order: 2;
+    text-align: center;
   }
+  
+  /* ছবি সবার নিচে */
   .about-img {
-    order: 3; /* সবার শেষে ছবি */
-    width: 12rem; height: 12rem; margin-top: 1rem;
+    order: 3;
+    width: 12rem; height: 12rem; 
+    margin: 0 auto; /* মাঝখানে আনার জন্য */
   }
-  .heading { font-size: 2.2rem; margin-bottom: 2rem; }
 
   /* 4. Portfolio Stacked */
   .portfolio-container { grid-template-columns: 1fr; padding: 0 10px; }
