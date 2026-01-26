@@ -1,22 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Md.Rahat Mostakim | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="header">
-      <a href="#home" class="logo">Portfolio.</a>
+      <a href="#home" class="logo">Rahat.<span>Dev</span></a>
       <nav class="navbar">
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#portfolio">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -26,12 +39,28 @@
         <h3>Hello, It's Me</h3>
         <h1>Md.Rahat Mostakim</h1>
         <h3>And I'm a <span class="multiple-text"></span></h3>
-        <p>I'm a Software Engineering student at AIUB. Passionate about creating interactive applications, learning new technologies, and building creative projects.</p>
+        <p>
+          I'm a Software Engineering student at AIUB. Passionate about creating
+          interactive applications, learning new technologies, and building
+          creative projects.
+        </p>
         <div class="social-media">
-          <a href="https://www.facebook.com/share/1G8ScnHLiv/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://github.com/rmsrahat" target="_blank"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/rms-rahat-07ab902b3" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/rmsrahat?igsh=eG9tMTFmZWQ3YzZt" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1G8ScnHLiv/" target="_blank"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://github.com/rmsrahat" target="_blank"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/rms-rahat-07ab902b3"
+            target="_blank"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/rmsrahat?igsh=eG9tMTFmZWQ3YzZt"
+            target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
         </div>
         <a href="assets/resume.pdf" download class="btn">Download CV</a>
       </div>
@@ -48,57 +77,165 @@
       </div>
       <div class="about-content">
         <h3>Software Engineering Student!</h3>
-        <p>I am a dedicated student at AIUB, focusing on Software Engineering. I love building logic-based projects, exploring OpenGL graphics, and creating user-friendly web interfaces to solve real-world problems effectively.</p>
+        <p>
+          I am a dedicated student at AIUB, focusing on Software Engineering. I
+          love building logic-based projects, exploring OpenGL graphics, and
+          creating user-friendly web interfaces to solve real-world problems
+          effectively.
+        </p>
+      </div>
+    </section>
+
+    <section class="code-snippet-section">
+      <div class="hero-code-box">
+        <div class="code-window-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre class="code-block">
+<code><span class="keyword">const</span> <span class="variable">coder</span> = {
+    name: <span class="string">'Rahat Mostakim'</span>,
+    uni: <span class="string">'AIUB'</span>,
+    skills: [
+        <span class="string">'WordPress'</span>, <span class="string">'HTML'</span>, <span class="string">'CSS'</span>,
+        <span class="string">'Figma'</span>, <span class="string">'C++'</span>, <span class="string">'Python'</span>,
+        <span class="string">'MySQL'</span>, <span class="string">'C#'</span>
+    ],
+    hardWorker: <span class="boolean">true</span>,
+    quickLearner: <span class="boolean">true</span>,
+    problemSolver: <span class="boolean">true</span>,
+    hireable: <span class="keyword">function</span>() {
+        <span class="keyword">return</span> (
+            <span class="keyword">this</span>.hardWorker &&
+            <span class="keyword">this</span>.problemSolver &&
+            <span class="keyword">this</span>.skills.length >= 5
+        );
+    }
+};</code>
+        </pre>
       </div>
     </section>
 
     <section class="skills" id="skills">
       <h2 class="heading">My <span>Skills</span></h2>
-      <div class="skills-row">
-        <div class="skills-column">
-          <h3 class="title">Coding Skills</h3>
-          <div class="skills-box">
-            <div class="skills-content">
-              <div class="progress">
-                <h3>HTML <span>90%</span></h3>
-                <div class="bar"><span style="--i: 90%"></span></div>
-              </div>
-              <div class="progress">
-                <h3>CSS <span>80%</span></h3>
-                <div class="bar"><span style="--i: 80%"></span></div>
-              </div>
-              <div class="progress">
-                <h3>JavaScript <span>65%</span></h3>
-                <div class="bar"><span style="--i: 65%"></span></div>
-              </div>
-              <div class="progress">
-                <h3>C++ / OpenGL <span>75%</span></h3>
-                <div class="bar"><span style="--i: 75%"></span></div>
-              </div>
-            </div>
+
+      <h3 class="sub-heading">Coding Skills</h3>
+      <div class="skills-marquee-container">
+        <div class="skills-track">
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-brands fa-html5 html"></i> <span>HTML</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-brands fa-css3-alt css"></i> <span>CSS</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-brands fa-js js"></i> <span>JavaScript</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-brands fa-wordpress wp"></i> <span>WordPress</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-solid fa-code cpp"></i> <span>C++</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-brands fa-python python"></i> <span>Python</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-solid fa-database mysql"></i> <span>MySQL</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-solid fa-code csharp"></i> <span>C#</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-solid fa-cube opengl"></i> <span>OpenGL</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-brands fa-figma figma"></i> <span>Figma</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-brands fa-html5 html"></i> <span>HTML</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-brands fa-css3-alt css"></i> <span>CSS</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-brands fa-js js"></i> <span>JavaScript</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-brands fa-wordpress wp"></i> <span>WordPress</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-solid fa-code cpp"></i> <span>C++</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-brands fa-python python"></i> <span>Python</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-solid fa-database mysql"></i> <span>MySQL</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-solid fa-code csharp"></i> <span>C#</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-solid fa-cube opengl"></i> <span>OpenGL</span>
+          </div>
+          <div class="skill-box" onclick="openCodingModal()">
+            <i class="fa-brands fa-figma figma"></i> <span>Figma</span>
           </div>
         </div>
-        <div class="skills-column">
-          <h3 class="title">Professional Skills</h3>
-          <div class="skills-box">
-            <div class="skills-content">
-              <div class="progress">
-                <h3>Web Design <span>85%</span></h3>
-                <div class="bar"><span style="--i: 85%"></span></div>
-              </div>
-              <div class="progress">
-                <h3>Problem Solving <span>70%</span></h3>
-                <div class="bar"><span style="--i: 70%"></span></div>
-              </div>
-              <div class="progress">
-                <h3>Graphic Design <span>60%</span></h3>
-                <div class="bar"><span style="--i: 60%"></span></div>
-              </div>
-              <div class="progress">
-                <h3>Team Work <span>80%</span></h3>
-                <div class="bar"><span style="--i: 80%"></span></div>
-              </div>
-            </div>
+      </div>
+
+      <h3 class="sub-heading">Professional Skills</h3>
+      <div class="skills-marquee-container">
+        <div class="skills-track reverse-track">
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-laptop-code web"></i> <span>Web Design</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-palette graphics"></i> <span>Graphics</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-film video"></i> <span>Video Edit</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-users team"></i> <span>Team Work</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-lightbulb problem"></i>
+            <span>Prob. Solving</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-laptop-code web"></i> <span>Web Design</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-palette graphics"></i> <span>Graphics</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-film video"></i> <span>Video Edit</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-users team"></i> <span>Team Work</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-lightbulb problem"></i>
+            <span>Prob. Solving</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-laptop-code web"></i> <span>Web Design</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-palette graphics"></i> <span>Graphics</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-film video"></i> <span>Video Edit</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-users team"></i> <span>Team Work</span>
+          </div>
+          <div class="skill-box" onclick="openProModal()">
+            <i class="fa-solid fa-lightbulb problem"></i>
+            <span>Prob. Solving</span>
           </div>
         </div>
       </div>
@@ -106,29 +243,107 @@
 
     <section class="portfolio" id="portfolio">
       <h2 class="heading">Latest <span>Projects</span></h2>
-      <div class="portfolio-container">
-        <div class="portfolio-box">
-          <img src="assets/Home_Finder.jpeg" alt="HomeFinder App" />
-          <div class="portfolio-layer">
+      <p class="section-desc">
+        Explore some of my recent work that showcases my skills and expertise in
+        web development
+      </p>
+
+      <div class="portfolio-grid">
+        <div class="project-card-vertical">
+          <div class="project-img-top">
+            <img src="assets/Home_Finder.jpeg" alt="HomeFinder App" />
+            <div class="project-role-tag">UI/UX Case Study</div>
+            <div class="img-overlay">
+              <a
+                href="https://www.figma.com/proto/AV4yUmvjk3wA93YBLbjilY/HOME-FINDER?node-id=0-1&t=NfJXvCf7bDfnhtQq-1"
+                target="_blank"
+                class="view-btn"
+                >View Project</a
+              >
+            </div>
+          </div>
+          <div class="project-content-bottom">
             <h4>HomeFinder App</h4>
             <p>UI/UX Design for a smart rental system using Figma.</p>
-            <a href="https://www.figma.com/proto/AV4yUmvjk3wA93YBLbjilY/HOME-FINDER?node-id=0-1&t=NfJXvCf7bDfnhtQq-1" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+            <div class="tech-tags"><span>Figma</span><span>UI/UX</span></div>
+            <div class="project-bottom-bar">
+              <i class="fa-regular fa-calendar-days"></i
+              ><span>Nov 2025 - Dec 2025</span>
+            </div>
           </div>
         </div>
-        <div class="portfolio-box">
-          <img src="assets/Bubble_Shooter.jpeg" alt="Bubble Shooter Game" />
-          <div class="portfolio-layer">
+        <div class="project-card-vertical">
+          <div class="project-img-top">
+            <img src="assets/Bubble_Shooter.jpeg" alt="Bubble Shooter Game" />
+            <div class="project-role-tag">C++ Game Dev</div>
+            <div class="img-overlay">
+              <a href="assets/Bubble shoot.zip" download class="view-btn"
+                >Download</a
+              >
+            </div>
+          </div>
+          <div class="project-content-bottom">
             <h4>Bubble Shooter</h4>
             <p>A classic shooting game built with C++ and OpenGL.</p>
-            <a href="assets/Bubble shoot.zip" download><i class="fa-solid fa-download"></i></a>
+            <div class="tech-tags">
+              <span>C++</span><span>OpenGL</span><span>Game</span>
+            </div>
+            <div class="project-bottom-bar">
+              <i class="fa-regular fa-calendar-days"></i
+              ><span>Oct 2025 - Nov 2025</span>
+            </div>
           </div>
         </div>
-        <div class="portfolio-box">
-          <img src="assets/profile.png" alt="Portfolio Website" />
-          <div class="portfolio-layer">
+        <div class="project-card-vertical">
+          <div class="project-img-top">
+            <img
+              src="assets/profile.png"
+              alt="Portfolio Website"
+              style="object-fit: contain; background: #020024"
+            />
+            <div class="project-role-tag">Web Development</div>
+            <div class="img-overlay">
+              <a href="#" class="view-btn">View Code</a>
+            </div>
+          </div>
+          <div class="project-content-bottom">
             <h4>My Portfolio</h4>
-            <p>Responsive personal portfolio website built with HTML, CSS, JS.</p>
-            <a href="#"><i class="fa-solid fa-code"></i></a>
+            <p>
+              Responsive personal portfolio website built with HTML, CSS, JS.
+            </p>
+            <div class="tech-tags">
+              <span>HTML5</span><span>CSS3</span><span>JS</span>
+            </div>
+            <div class="project-bottom-bar">
+              <i class="fa-regular fa-calendar-days"></i
+              ><span>Sep 2020 - Oct 2020</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card-vertical">
+          <div class="project-img-top">
+            <img
+              src="assets/Mess Management.jpeg"
+              alt="Mess Management System"
+            />
+            <div class="project-role-tag">Full Stack App</div>
+            <div class="img-overlay">
+              <a href="#" class="view-btn">View Details</a>
+            </div>
+          </div>
+          <div class="project-content-bottom">
+            <h4>Mess Management System</h4>
+            <p>
+              A web-based application to automate mess operations, including
+              meal tracking, billing, and member management.
+            </p>
+            <div class="tech-tags">
+              <span>HTML</span><span>CSS</span><span>MySQL</span>
+            </div>
+            <div class="project-bottom-bar">
+              <i class="fa-regular fa-calendar-days"></i
+              ><span>Sep 2025 - Oct 2025</span>
+            </div>
           </div>
         </div>
       </div>
@@ -138,25 +353,39 @@
       <h2 class="heading">Contact <span>Me!</span></h2>
       <div class="contact-info">
         <div class="info-item">
-          <i class="fa-solid fa-phone"></i>
-          <span>01773803905</span>
+          <i class="fa-solid fa-phone"></i><span>01773803905</span>
         </div>
         <div class="info-item">
-          <i class="fa-solid fa-envelope"></i>
-          <span>rmsrahat2002@gmail.com</span>
+          <i class="fa-solid fa-envelope"></i
+          ><span>rmsrahat2002@gmail.com</span>
         </div>
       </div>
       <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="c60c26c1-2f79-44ff-91cc-e50f1da8bf29" />
+        <input
+          type="hidden"
+          name="access_key"
+          value="c60c26c1-2f79-44ff-91cc-e50f1da8bf29"
+        />
         <div class="input-box">
           <input type="text" name="name" placeholder="Full Name" required />
-          <input type="email" name="email" placeholder="Email Address" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
         </div>
         <div class="input-box">
           <input type="number" name="phone" placeholder="Mobile Number" />
           <input type="text" name="subject" placeholder="Email Subject" />
         </div>
-        <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+        <textarea
+          name="message"
+          cols="30"
+          rows="10"
+          placeholder="Your Message"
+          required
+        ></textarea>
         <button type="submit" class="btn">Send Message</button>
       </form>
     </section>
@@ -169,6 +398,175 @@
         <a href="#home"><i class="fa-solid fa-angle-up"></i></a>
       </div>
     </footer>
+
+    <div id="codingModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeCodingModal()">&times;</span>
+        <h3>Coding Skills</h3>
+        <div class="skill-list-container">
+          <div class="skill-bar-item">
+            <div class="skill-info">
+              <div class="skill-name">
+                <i class="fa-brands fa-html5" style="color: #e34f26"></i> HTML
+              </div>
+              <div class="skill-perc">95%</div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-fill" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-info">
+              <div class="skill-name">
+                <i class="fa-brands fa-css3-alt" style="color: #1572b6"></i> CSS
+              </div>
+              <div class="skill-perc">92%</div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-fill" style="width: 92%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-info">
+              <div class="skill-name">
+                <i class="fa-brands fa-js" style="color: #f7df1e"></i>
+                Javascript
+              </div>
+              <div class="skill-perc">90%</div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-fill" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-info">
+              <div class="skill-name">
+                <i class="fa-brands fa-python" style="color: #4584b6"></i>
+                Python
+              </div>
+              <div class="skill-perc">85%</div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-fill" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-info">
+              <div class="skill-name">
+                <i class="fa-solid fa-code" style="color: #00599c"></i> C++
+              </div>
+              <div class="skill-perc">88%</div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-fill" style="width: 88%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-info">
+              <div class="skill-name">
+                <i class="fa-solid fa-code" style="color: #9b4993"></i> C#
+              </div>
+              <div class="skill-perc">80%</div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-fill" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-info">
+              <div class="skill-name">
+                <i class="fa-solid fa-database" style="color: #00758f"></i>
+                MySQL
+              </div>
+              <div class="skill-perc">85%</div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-fill" style="width: 85%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="proModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeProModal()">&times;</span>
+        <h3>Professional Skills</h3>
+        <div class="skill-list-container">
+          <div class="skill-bar-item">
+            <div class="skill-info">
+              <div class="skill-name">
+                <i class="fa-solid fa-laptop-code" style="color: #00d4ff"></i>
+                Web Design
+              </div>
+              <div class="skill-perc">90%</div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-fill" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-info">
+              <div class="skill-name">
+                <i class="fa-solid fa-palette" style="color: #ff00cc"></i>
+                Graphics Design
+              </div>
+              <div class="skill-perc">85%</div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-fill" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-info">
+              <div class="skill-name">
+                <i class="fa-solid fa-film" style="color: #ff5722"></i> Video
+                Editing
+              </div>
+              <div class="skill-perc">80%</div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-fill" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-info">
+              <div class="skill-name">
+                <i class="fa-brands fa-figma" style="color: #f24e1e"></i> Figma
+              </div>
+              <div class="skill-perc">88%</div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-fill" style="width: 88%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-info">
+              <div class="skill-name">
+                <i class="fa-solid fa-users" style="color: #00d4ff"></i> Team
+                Work
+              </div>
+              <div class="skill-perc">95%</div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-fill" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-info">
+              <div class="skill-name">
+                <i class="fa-solid fa-lightbulb" style="color: #ffd700"></i>
+                Problem Solving
+              </div>
+              <div class="skill-perc">90%</div>
+            </div>
+            <div class="skill-progress">
+              <div class="progress-fill" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
@@ -183,22 +581,57 @@
           if (top >= offset && top < offset + height) {
             navLinks.forEach((links) => {
               links.classList.remove("active");
-              document.querySelector("header nav a[href*=" + id + "]").classList.add("active");
+              document
+                .querySelector("header nav a[href*=" + id + "]")
+                .classList.add("active");
             });
           }
         });
+        document
+          .querySelector("header")
+          .classList.toggle("sticky", window.scrollY > 100);
       };
       const typed = new Typed(".multiple-text", {
-        strings: ["Student", "Learner", "Coding Enthusiast", "Designer", "Editor"],
+        strings: ["Student", "Learner", "Coding Enthusiast", "Designer"],
         typeSpeed: 70,
         backSpeed: 70,
         backDelay: 1000,
-        loop: true
+        loop: true,
       });
-      ScrollReveal({ reset: true, distance: "80px", duration: 2000, delay: 200 });
+      ScrollReveal({
+        reset: true,
+        distance: "80px",
+        duration: 2000,
+        delay: 200,
+      });
       ScrollReveal().reveal(".home-content, .heading", { origin: "top" });
-      ScrollReveal().reveal(".home-img, .about-img, .skills-row, .portfolio-box, .contact form", { origin: "bottom" });
-      ScrollReveal().reveal(".about-content", { origin: "bottom" });
+      ScrollReveal().reveal(
+        ".home-img, .about-img, .skills-marquee-container, .project-card-vertical, .contact form",
+        { origin: "bottom" },
+      );
+      ScrollReveal().reveal(".about-content, .hero-code-box", {
+        origin: "bottom",
+      });
+      function openCodingModal() {
+        document.getElementById("codingModal").style.display = "block";
+      }
+      function closeCodingModal() {
+        document.getElementById("codingModal").style.display = "none";
+      }
+      function openProModal() {
+        document.getElementById("proModal").style.display = "block";
+      }
+      function closeProModal() {
+        document.getElementById("proModal").style.display = "none";
+      }
+      window.onclick = function (event) {
+        if (event.target == document.getElementById("codingModal")) {
+          closeCodingModal();
+        }
+        if (event.target == document.getElementById("proModal")) {
+          closeProModal();
+        }
+      };
     </script>
   </body>
 </html>
