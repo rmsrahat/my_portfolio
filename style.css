@@ -16,6 +16,7 @@ body {
   overflow-x: hidden;
 }
 
+/* HEADER */
 .header {
   position: fixed;
   top: 0;
@@ -56,6 +57,7 @@ body {
   color: #00d4ff;
 }
 
+/* SECTIONS */
 section {
   min-height: 100vh;
   padding: 0 10%;
@@ -88,15 +90,19 @@ section::before {
 .heading span {
   color: #00d4ff;
 }
+
+/* --- UPDATED: JUSTIFY ALIGNMENT FOR DESCRIPTION --- */
 .section-desc {
-  text-align: center;
+  text-align: justify; /* Justified as requested */
   font-size: 1.1rem;
   color: #d1d1d1;
   margin-bottom: 3rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.8; /* Beautiful spacing */
 }
+
 .btn {
   display: inline-block;
   padding: 12px 28px;
@@ -114,16 +120,25 @@ section::before {
   box-shadow: 0 0 20px #00d4ff;
 }
 
+/* HOME */
 .home {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 30px;
   padding-top: 130px;
   padding-bottom: 50px;
 }
+.home-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 .home-content {
   max-width: 600px;
+  flex: 1;
 }
 .home-content h3 {
   font-size: 32px;
@@ -141,9 +156,15 @@ section::before {
   margin: -3px 0;
   line-height: 1.2;
 }
+
+/* --- UPDATED: JUSTIFY ALIGNMENT FOR HOME CONTENT --- */
 .home-content p {
-  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.8; /* Beautiful spacing */
+  text-align: justify; /* Justified as requested */
+  margin-bottom: 2rem;
 }
+
 .social-media a {
   display: inline-flex;
   justify-content: center;
@@ -164,7 +185,7 @@ section::before {
   box-shadow: 0 0 20px #00d4ff;
 }
 .home-img {
-  width: 40vw;
+  flex: 1;
   display: flex;
   justify-content: flex-end;
 }
@@ -177,14 +198,22 @@ section::before {
   border: 4px solid #00d4ff;
 }
 
+/* ABOUT */
 .about {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
 }
-.about-img {
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+.about-img-block {
+  order: 1;
   position: relative;
   width: 14rem;
   height: 14rem;
@@ -194,7 +223,7 @@ section::before {
   align-items: center;
   margin-bottom: 1.5rem;
 }
-.about-img img {
+.about-img-block img {
   width: 90%;
   height: 90%;
   border-radius: 50%;
@@ -217,24 +246,29 @@ section::before {
   animation: spin 8s linear infinite;
   z-index: 0;
 }
-.about-content {
+.about-text-block {
+  order: 2;
   max-width: 700px;
-  width: 100%;
   padding: 0 20px;
+  text-align: center;
 }
-.about-content h3 {
+.about-text-block h3 {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: #fff;
 }
-.about-content p {
+
+/* --- UPDATED: JUSTIFY ALIGNMENT FOR ABOUT CONTENT --- */
+.about-text-block p {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.8; /* Beautiful spacing */
   color: #e0e0e0;
   margin-bottom: 2rem;
+  text-align: justify; /* Justified as requested */
 }
 
+/* CODE BOX */
 .code-snippet-section {
   min-height: auto;
   padding: 20px 10%;
@@ -294,6 +328,7 @@ section::before {
   font-weight: bold;
 }
 
+/* SKILLS */
 .skills {
   padding-bottom: 4rem;
   min-height: auto;
@@ -414,6 +449,7 @@ section::before {
   color: #ffd700;
 }
 
+/* PROJECTS */
 .portfolio {
   padding-bottom: 10rem;
 }
@@ -522,12 +558,16 @@ section::before {
 .project-card-vertical:hover .project-content-bottom h4::after {
   width: 100%;
 }
+
+/* --- UPDATED: JUSTIFY ALIGNMENT FOR PROJECT DESCRIPTIONS --- */
 .project-content-bottom p {
   font-size: 0.95rem;
   color: #d1d1d1;
-  line-height: 1.5;
+  line-height: 1.6; /* Good readability */
   margin-bottom: 20px;
+  text-align: justify; /* Justified as requested */
 }
+
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
@@ -554,6 +594,7 @@ section::before {
   font-size: 0.9rem;
 }
 
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -634,6 +675,7 @@ section::before {
   background: linear-gradient(90deg, #020024, #00d4ff);
 }
 
+/* CONTACT */
 .contact {
   padding-bottom: 7rem;
 }
@@ -737,6 +779,7 @@ section::before {
   color: #020024;
 }
 
+/* ============ MOBILE OPTIMIZATION ============ */
 @media (max-width: 991px) {
   .header {
     padding: 15px 5%;
@@ -745,11 +788,16 @@ section::before {
     padding: 40px 5% 60px 5%;
     padding-top: 40px;
   }
+
+  /* Home: Column Layout (Image Top via HTML order) */
   .home {
     padding-top: 100px;
     flex-direction: column;
     text-align: center;
     gap: 20px;
+  }
+  .home-container {
+    flex-direction: column;
   }
   .home-content {
     margin-top: 1rem;
@@ -764,6 +812,19 @@ section::before {
     width: 60%;
     max-width: 300px;
   }
+
+  /* About: Mobile Layout (Text Top, Image Bottom) */
+  .about-container {
+    flex-direction: column;
+  }
+  .about-text-block {
+    order: 1;
+  }
+  .about-img-block {
+    order: 2;
+    margin-top: 30px;
+  }
+
   .hero-code-box {
     width: 100%;
     margin-top: 20px;
@@ -786,7 +847,7 @@ section::before {
     font-size: 2.5rem;
   }
   .section-desc {
-    font-size: 0.95rem;
+    font-size: 0.95rem; /* Clean font on mobile */
     margin-bottom: 2rem;
     padding: 0 15px;
   }
@@ -820,6 +881,7 @@ section::before {
     padding: 5px;
     white-space: nowrap;
   }
+
   .home {
     padding-top: 130px;
   }
@@ -832,6 +894,7 @@ section::before {
   .home-content p {
     font-size: 14px;
   }
+
   section {
     padding-top: 25px;
   }
@@ -873,6 +936,7 @@ section::before {
   }
 }
 
+/* Animations */
 @keyframes floatImage {
   0% {
     transform: translateY(0);
