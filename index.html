@@ -13,16 +13,18 @@
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="header">
-      <a href="#home" class="logo">Rahat.<span>Dev</span></a>
+      <a href="#home" class="logo">Rahat.<span>Portfolio</span></a>
       <nav class="navbar">
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
@@ -37,6 +39,7 @@
         <div class="home-img">
           <img src="assets/profile.png" alt="Profile Picture" />
         </div>
+
         <div class="home-content">
           <h3>Hello, It's Me</h3>
           <h1>Md.Rahat Mostakim</h1>
@@ -77,9 +80,9 @@
           <h3>Software Engineering Student!</h3>
           <p>
             I am a dedicated student at AIUB, focusing on Software Engineering.
-            I love building logic-based projects, turning raw code into reality,
-            exploring OpenGL graphics, and creating user-friendly web interfaces
-            to solve real-world problems effectively.
+            I love building logic-based projects, exploring OpenGL graphics, and
+            creating user-friendly web interfaces to solve real-world problems
+            effectively.
           </p>
         </div>
 
@@ -157,6 +160,7 @@
           <div class="skill-box" onclick="openCodingModal()">
             <i class="fa-brands fa-figma figma"></i> <span>Figma</span>
           </div>
+
           <div class="skill-box" onclick="openCodingModal()">
             <i class="fa-brands fa-html5 html"></i> <span>HTML</span>
           </div>
@@ -274,7 +278,7 @@
             <div class="tech-tags"><span>Figma</span><span>UI/UX</span></div>
             <div class="project-bottom-bar">
               <i class="fa-regular fa-calendar-days"></i
-              ><span>Nov 2025 - Dec 2025</span>
+              ><span>Jan 2024 - Feb 2024</span>
             </div>
           </div>
         </div>
@@ -297,7 +301,7 @@
             </div>
             <div class="project-bottom-bar">
               <i class="fa-regular fa-calendar-days"></i
-              ><span>Oct 2025 - Nov 2025</span>
+              ><span>Nov 2023 - Dec 2023</span>
             </div>
           </div>
         </div>
@@ -324,7 +328,7 @@
             </div>
             <div class="project-bottom-bar">
               <i class="fa-regular fa-calendar-days"></i
-              ><span>July 2020 - Aug 2020</span>
+              ><span>Feb 2025 - Present</span>
             </div>
           </div>
         </div>
@@ -351,7 +355,7 @@
             </div>
             <div class="project-bottom-bar">
               <i class="fa-regular fa-calendar-days"></i
-              ><span>Sep 2025 - Oct 2025</span>
+              ><span>Sep 2024 - Oct 2024</span>
             </div>
           </div>
         </div>
@@ -621,6 +625,7 @@
       ScrollReveal().reveal(".about-content, .hero-code-box", {
         origin: "bottom",
       });
+
       function openCodingModal() {
         document.getElementById("codingModal").style.display = "block";
       }
@@ -634,12 +639,10 @@
         document.getElementById("proModal").style.display = "none";
       }
       window.onclick = function (event) {
-        if (event.target == document.getElementById("codingModal")) {
+        if (event.target == document.getElementById("codingModal"))
           closeCodingModal();
-        }
-        if (event.target == document.getElementById("proModal")) {
+        if (event.target == document.getElementById("proModal"))
           closeProModal();
-        }
       };
     </script>
   </body>
