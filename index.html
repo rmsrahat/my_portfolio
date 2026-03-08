@@ -81,12 +81,7 @@
       <div class="about-container">
         <div class="about-text-block">
           <h3>Software Engineering Student!</h3>
-          <p>
-            I am a dedicated student at AIUB, focusing on Software Engineering.
-            I love building logic-based projects, exploring OpenGL graphics, and
-            creating user-friendly web interfaces to solve real-world problems
-            effectively.
-          </p>
+          <p><span class="about-typing"></span></p>
         </div>
 
         <div class="about-img-block">
@@ -105,17 +100,17 @@
         </div>
         <pre class="code-block">
 <code><span class="keyword">const</span> <span class="variable">coder</span> = {
-    name: <span class="string">'Rahat Mostakim'</span>,
-    uni: <span class="string">'AIUB'</span>,
-    skills: [
+    <span class="propname">name</span>: <span class="string">'Rahat Mostakim'</span>,
+    <span class="propname">uni</span>: <span class="string">'AIUB'</span>,
+    <span class="propname">skills</span>: [
         <span class="string">'WordPress'</span>, <span class="string">'HTML'</span>, <span class="string">'CSS'</span>,
         <span class="string">'Figma'</span>, <span class="string">'C++'</span>, <span class="string">'Python'</span>,
         <span class="string">'MySQL'</span>, <span class="string">'C#'</span>
     ],
-    hardWorker: <span class="boolean">true</span>,
-    quickLearner: <span class="boolean">true</span>,
-    problemSolver: <span class="boolean">true</span>,
-    hireable: <span class="keyword">function</span>() {
+    <span class="propname">hardWorker</span>: <span class="boolean">true</span>,
+    <span class="propname">quickLearner</span>: <span class="boolean">true</span>,
+    <span class="propname">problemSolver</span>: <span class="boolean">true</span>,
+    <span class="propname">hireable</span>: <span class="keyword">function</span>() {
         <span class="keyword">return</span> (
             <span class="keyword">this</span>.hardWorker &&
             <span class="keyword">this</span>.problemSolver &&
@@ -369,11 +364,12 @@
       <h2 class="heading">Contact <span>Me!</span></h2>
       <div class="contact-info">
         <div class="info-item">
-          <i class="fa-solid fa-phone"></i><span>01773803905</span>
+          <i class="fa-solid fa-phone contact-phone-icon"></i
+          ><span class="contact-fade">01773803905</span>
         </div>
         <div class="info-item">
-          <i class="fa-solid fa-envelope"></i
-          ><span>rmsrahat2002@gmail.com</span>
+          <i class="fa-solid fa-envelope contact-email-icon"></i
+          ><span class="contact-fade">rmsrahat2002@gmail.com</span>
         </div>
       </div>
       <form action="https://api.web3forms.com/submit" method="POST">
@@ -408,7 +404,7 @@
 
     <footer class="footer">
       <div class="footer-text">
-        <p>Copyright &copy; 2021 by Md.Rahat Mostakim | All Rights Reserved.</p>
+        <p>Copyright &copy; 2025 by Md.Rahat Mostakim | All Rights Reserved.</p>
       </div>
       <div class="footer-iconTop">
         <a href="#home"><i class="fa-solid fa-angle-up"></i></a>
@@ -700,6 +696,18 @@
         backSpeed: 70,
         backDelay: 1000,
         loop: true,
+      });
+
+      const typedAbout = new Typed(".about-typing", {
+        strings: [
+          "I am a dedicated student at AIUB, focusing on Software Engineering. I love building logic-based projects, exploring OpenGL graphics, and creating user-friendly web interfaces to solve real-world problems effectively.",
+        ],
+        typeSpeed: 30,
+        backSpeed: 15,
+        backDelay: 3000,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
       });
       ScrollReveal({
         reset: true,
