@@ -56,17 +56,18 @@ section,
   left: 0;
   width: 100%;
   padding: 20px 10%;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
+  background: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   transition: 0.3s;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.55), 0 2px 0 0 rgba(0,212,255,0.04);
 }
 .header.sticky {
   background: rgba(2, 0, 36, 0.9);
   padding: 10px 10%;
+  box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.75), 0 2px 0 0 rgba(0,212,255,0.07);
 }
 .logo {
   font-size: 25px;
@@ -77,17 +78,37 @@ section,
 .logo span {
   color: #00d4ff;
 }
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 .navbar a {
   display: inline-block;
   font-size: 18px;
   color: #fff;
   font-weight: 500;
   margin-left: 35px;
-  transition: 0.3s;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 6px;
 }
 .navbar a:hover,
 .navbar a.active {
   color: #00d4ff;
+}
+
+/* Sliding glowing underline indicator */
+.nav-indicator {
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  background: #00d4ff;
+  border-radius: 2px;
+  box-shadow: 0 0 10px #00d4ff, 0 0 22px #00d4ff66;
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1), width 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+  pointer-events: none;
+  opacity: 0;
 }
 
 /* SECTIONS */
@@ -824,7 +845,188 @@ section::before {
   color: #020024;
 }
 
-/* ============ MOBILE OPTIMIZATION ============ */
+/* ============ NOTICEBOT CARD BANNER ============ */
+.noticebot-banner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #000d1f 0%, #002244 50%, #001a33 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.noticebot-banner::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(0,212,255,0.12) 0%, transparent 60%);
+  animation: rotateBg 6s linear infinite;
+}
+@keyframes rotateBg {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.noticebot-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(0,212,255,0.15);
+  border: 2px solid #00d4ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0,212,255,0.5);
+  z-index: 2;
+}
+.noticebot-tg-icon {
+  font-size: 2.5rem;
+  color: #00d4ff;
+}
+.noticebot-title-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+.noticebot-label {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 3px;
+}
+.noticebot-label2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #00d4ff;
+  letter-spacing: 1px;
+}
+.noticebot-pulse {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,212,255,0.3);
+  animation: pulse 2s ease-out infinite;
+  z-index: 1;
+}
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* ============ SNAKE GAME SECTION ============ */
+.snake-game-section {
+  min-height: auto;
+  padding: 60px 10% 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.snake-game-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.snake-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background: rgba(0,212,255,0.04);
+  border: 1px solid rgba(0,212,255,0.3);
+  border-radius: 20px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0,212,255,0.1);
+  max-width: 420px;
+  width: 100%;
+}
+.snake-score-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00d4ff;
+}
+#snakeCanvas {
+  border-radius: 12px;
+  border: 2px solid rgba(0,212,255,0.4);
+  box-shadow: 0 0 20px rgba(0,212,255,0.2);
+  display: block;
+  max-width: 100%;
+}
+.snake-btn {
+  padding: 10px 30px;
+  background: #00d4ff;
+  color: #020024;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 12px rgba(0,212,255,0.5);
+}
+.snake-btn:hover { box-shadow: 0 0 24px rgba(0,212,255,0.8); transform: scale(1.04); }
+.snake-mobile-pad {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.snake-pad-row {
+  display: flex;
+  gap: 6px;
+}
+.snake-mobile-pad button {
+  width: 54px;
+  height: 54px;
+  background: rgba(0,212,255,0.15);
+  border: 1px solid rgba(0,212,255,0.4);
+  border-radius: 10px;
+  color: #00d4ff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.snake-mobile-pad button:active { background: rgba(0,212,255,0.35); transform: scale(0.93); }
+.snake-hint {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .snake-mobile-pad { display: flex; }
+  #snakeCanvas { width: 100%; height: auto; }
+  .snake-game-container { padding: 16px; }
+}
+
+/* ============ NAV LINK STYLES ============ */
+.navbar a {
+  position: relative;
+  padding: 6px 4px;
+  border-radius: 0;
+  transition: color 0.3s ease;
+  border: none;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.navbar a:hover,
+.navbar a.active {
+  color: #00d4ff;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
 @media (max-width: 991px) {
   .header {
     padding: 15px 5%;
@@ -920,21 +1122,21 @@ section::before {
     width: 100%;
   }
   .navbar {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
     width: 100%;
-    overflow-x: auto;
-    padding-bottom: 5px;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible;
+    padding-bottom: 10px;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: nowrap;
   }
   .navbar a {
     font-size: 13px;
-    margin: 0;
-    padding: 5px;
+    margin: 0 8px;
+    padding: 4px 2px 8px 2px;
     white-space: nowrap;
+  }
+  .nav-indicator {
+    bottom: 0px;
   }
 
   .home {
