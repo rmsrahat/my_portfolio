@@ -29,6 +29,7 @@
     <header class="header">
       <a href="#home" class="logo">Rahat.<span>Portfolio</span></a>
       <nav class="navbar">
+        <span class="nav-indicator" id="navIndicator"></span>
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -249,6 +250,41 @@
       </div>
     </section>
 
+    <!-- ===== SNAKE GAME SECTION ===== -->
+    <section class="snake-game-section" id="snake-game">
+      <h2 class="heading">Take a <span>Break!</span></h2>
+      <p class="section-desc">
+        While you're exploring my portfolio, feel free to play a quick game!
+      </p>
+      <div class="snake-game-wrapper">
+        <div class="snake-game-container">
+          <div class="snake-score-bar">
+            <span>Score: <span id="snakeScore">0</span></span>
+            <span>Best: <span id="snakeBest">0</span></span>
+          </div>
+          <canvas id="snakeCanvas" width="360" height="360"></canvas>
+          <div class="snake-controls">
+            <button class="snake-btn" id="snakeStartBtn" onclick="snakeStart()">
+              &#9654; Start Game
+            </button>
+          </div>
+          <div class="snake-mobile-pad">
+            <div class="snake-pad-row">
+              <button onclick="snakeDir('up')">&#9650;</button>
+            </div>
+            <div class="snake-pad-row">
+              <button onclick="snakeDir('left')">&#9664;</button>
+              <button onclick="snakeDir('down')">&#9660;</button>
+              <button onclick="snakeDir('right')">&#9654;</button>
+            </div>
+          </div>
+          <p class="snake-hint">
+            Use arrow keys to play &bull; Mobile: use buttons below
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="portfolio" id="portfolio">
       <h2 class="heading">Latest <span>Projects</span></h2>
       <p class="section-desc">
@@ -306,27 +342,39 @@
 
         <div class="project-card-vertical">
           <div class="project-img-top">
-            <img
-              src="assets/profile.png"
-              alt="Portfolio Website"
-              style="object-fit: contain; background: #020024"
-            />
-            <div class="project-role-tag">Web Development</div>
+            <div class="noticebot-banner">
+              <div class="noticebot-icon-wrapper">
+                <i class="fa-brands fa-telegram noticebot-tg-icon"></i>
+              </div>
+              <div class="noticebot-title-wrap">
+                <span class="noticebot-label">AIUB</span>
+                <span class="noticebot-label2">NOTICE-Bot</span>
+              </div>
+              <div class="noticebot-pulse"></div>
+            </div>
+            <div class="project-role-tag">Bot Development</div>
             <div class="img-overlay">
-              <a href="#" class="view-btn">View Code</a>
+              <a
+                href="https://t.me/+fY85Gy6ZCg1kNmQ1"
+                target="_blank"
+                class="view-btn"
+                >View Bot</a
+              >
             </div>
           </div>
           <div class="project-content-bottom">
-            <h4>My Portfolio</h4>
+            <h4>AIUB NOTICE-Bot</h4>
             <p>
-              Responsive personal portfolio website built with HTML, CSS, JS.
+              An automated Telegram bot that fetches and instantly broadcasts
+              official AIUB notices to the AIUB community channel — keeping
+              students up-to-date without any manual effort.
             </p>
             <div class="tech-tags">
-              <span>HTML5</span><span>CSS3</span><span>JS</span>
+              <span>JavaScript</span><span>Node.js</span><span>React.js</span>
             </div>
             <div class="project-bottom-bar">
               <i class="fa-regular fa-calendar-days"></i
-              ><span>Feb 2025 - Present</span>
+              ><span>March 2025 - April 2025</span>
             </div>
           </div>
         </div>
@@ -580,6 +628,232 @@
       </div>
     </div>
 
+    <!-- ===== SNAKE GAME SCRIPT ===== -->
+    <script>
+      (function () {
+        const canvas = document.getElementById("snakeCanvas");
+        const ctx = canvas.getContext("2d");
+        const GRID = 18;
+        const COLS = Math.floor(canvas.width / GRID);
+        const ROWS = Math.floor(canvas.height / GRID);
+        let snake, dir, nextDir, food, score, best, running, loop;
+
+        function rand(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function spawnFood() {
+          let pos;
+          do {
+            pos = { x: rand(0, COLS - 1), y: rand(0, ROWS - 1) };
+          } while (snake.some((s) => s.x === pos.x && s.y === pos.y));
+          return pos;
+        }
+
+        function snakeStart() {
+          snake = [
+            { x: 10, y: 10 },
+            { x: 9, y: 10 },
+            { x: 8, y: 10 },
+          ];
+          dir = { x: 1, y: 0 };
+          nextDir = { x: 1, y: 0 };
+          score = 0;
+          running = true;
+          document.getElementById("snakeScore").textContent = 0;
+          food = spawnFood();
+          document.getElementById("snakeStartBtn").textContent = "Restart";
+          clearInterval(loop);
+          loop = setInterval(gameStep, 130);
+        }
+        window.snakeStart = snakeStart;
+
+        window.snakeDir = function (d) {
+          if (!running) return;
+          if (d === "up" && dir.y === 0) nextDir = { x: 0, y: -1 };
+          if (d === "down" && dir.y === 0) nextDir = { x: 0, y: 1 };
+          if (d === "left" && dir.x === 0) nextDir = { x: -1, y: 0 };
+          if (d === "right" && dir.x === 0) nextDir = { x: 1, y: 0 };
+        };
+
+        document.addEventListener("keydown", (e) => {
+          if (!running) return;
+          if (e.key === "ArrowUp" && dir.y === 0) {
+            nextDir = { x: 0, y: -1 };
+            e.preventDefault();
+          }
+          if (e.key === "ArrowDown" && dir.y === 0) {
+            nextDir = { x: 0, y: 1 };
+            e.preventDefault();
+          }
+          if (e.key === "ArrowLeft" && dir.x === 0) {
+            nextDir = { x: -1, y: 0 };
+            e.preventDefault();
+          }
+          if (e.key === "ArrowRight" && dir.x === 0) {
+            nextDir = { x: 1, y: 0 };
+            e.preventDefault();
+          }
+        });
+
+        function gameStep() {
+          dir = { ...nextDir };
+          const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+          if (
+            head.x < 0 ||
+            head.x >= COLS ||
+            head.y < 0 ||
+            head.y >= ROWS ||
+            snake.some((s) => s.x === head.x && s.y === head.y)
+          ) {
+            running = false;
+            clearInterval(loop);
+            drawGameOver();
+            return;
+          }
+          snake.unshift(head);
+          if (head.x === food.x && head.y === food.y) {
+            score++;
+            document.getElementById("snakeScore").textContent = score;
+            if (!best || score > best) {
+              best = score;
+              document.getElementById("snakeBest").textContent = best;
+            }
+            food = spawnFood();
+          } else {
+            snake.pop();
+          }
+          draw();
+        }
+
+        function draw() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = "rgba(0,5,16,0.85)";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          // Grid
+          ctx.strokeStyle = "rgba(0,212,255,0.05)";
+          for (let i = 0; i <= COLS; i++) {
+            ctx.beginPath();
+            ctx.moveTo(i * GRID, 0);
+            ctx.lineTo(i * GRID, canvas.height);
+            ctx.stroke();
+          }
+          for (let j = 0; j <= ROWS; j++) {
+            ctx.beginPath();
+            ctx.moveTo(0, j * GRID);
+            ctx.lineTo(canvas.width, j * GRID);
+            ctx.stroke();
+          }
+          // Snake
+          snake.forEach((s, i) => {
+            const g = ctx.createRadialGradient(
+              s.x * GRID + GRID / 2,
+              s.y * GRID + GRID / 2,
+              1,
+              s.x * GRID + GRID / 2,
+              s.y * GRID + GRID / 2,
+              GRID / 2,
+            );
+            g.addColorStop(0, i === 0 ? "#00eeff" : "#0099cc");
+            g.addColorStop(1, i === 0 ? "#0088aa" : "#004466");
+            ctx.fillStyle = g;
+            ctx.beginPath();
+            ctx.roundRect(
+              s.x * GRID + 1,
+              s.y * GRID + 1,
+              GRID - 2,
+              GRID - 2,
+              4,
+            );
+            ctx.fill();
+            if (i === 0) {
+              ctx.shadowColor = "#00d4ff";
+              ctx.shadowBlur = 12;
+              ctx.fill();
+              ctx.shadowBlur = 0;
+            }
+          });
+          // Food
+          const fg = ctx.createRadialGradient(
+            food.x * GRID + GRID / 2,
+            food.y * GRID + GRID / 2,
+            1,
+            food.x * GRID + GRID / 2,
+            food.y * GRID + GRID / 2,
+            GRID / 2,
+          );
+          fg.addColorStop(0, "#ffffff");
+          fg.addColorStop(1, "#00d4ff");
+          ctx.fillStyle = fg;
+          ctx.shadowColor = "#00d4ff";
+          ctx.shadowBlur = 16;
+          ctx.beginPath();
+          ctx.arc(
+            food.x * GRID + GRID / 2,
+            food.y * GRID + GRID / 2,
+            GRID / 2 - 2,
+            0,
+            Math.PI * 2,
+          );
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+
+        function drawGameOver() {
+          draw();
+          ctx.fillStyle = "rgba(0,5,16,0.75)";
+          ctx.fillRect(0, canvas.height / 2 - 55, canvas.width, 110);
+          ctx.fillStyle = "#00d4ff";
+          ctx.font = "bold 28px Poppins,sans-serif";
+          ctx.textAlign = "center";
+          ctx.fillText("Game Over!", canvas.width / 2, canvas.height / 2 - 10);
+          ctx.fillStyle = "#fff";
+          ctx.font = "16px Poppins,sans-serif";
+          ctx.fillText(
+            "Score: " + score,
+            canvas.width / 2,
+            canvas.height / 2 + 25,
+          );
+          ctx.fillStyle = "#aaa";
+          ctx.font = "13px Poppins,sans-serif";
+          ctx.fillText(
+            "Press Restart to play again",
+            canvas.width / 2,
+            canvas.height / 2 + 50,
+          );
+        }
+
+        // Draw initial idle screen
+        (function idleScreen() {
+          ctx.fillStyle = "rgba(0,5,16,0.92)";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.strokeStyle = "rgba(0,212,255,0.07)";
+          for (let i = 0; i <= COLS; i++) {
+            ctx.beginPath();
+            ctx.moveTo(i * GRID, 0);
+            ctx.lineTo(i * GRID, canvas.height);
+            ctx.stroke();
+          }
+          for (let j = 0; j <= ROWS; j++) {
+            ctx.beginPath();
+            ctx.moveTo(0, j * GRID);
+            ctx.lineTo(canvas.width, j * GRID);
+            ctx.stroke();
+          }
+          ctx.fillStyle = "#00d4ff";
+          ctx.font = "bold 32px Poppins,sans-serif";
+          ctx.textAlign = "center";
+          ctx.fillText("SNAKE", canvas.width / 2, canvas.height / 2 - 15);
+          ctx.fillStyle = "#aaa";
+          ctx.font = "14px Poppins,sans-serif";
+          ctx.fillText(
+            "Press Start to play",
+            canvas.width / 2,
+            canvas.height / 2 + 20,
+          );
+        })();
+      })();
+    </script>
+
     <!-- ===== STARFIELD SCRIPT ===== -->
     <script>
       (function () {
@@ -723,6 +997,46 @@
       ScrollReveal().reveal(".about-content, .hero-code-box", {
         origin: "bottom",
       });
+
+      // ===== SLIDING NAV INDICATOR (click only) =====
+      (function () {
+        const navbar = document.querySelector(".navbar");
+        const indicator = document.getElementById("navIndicator");
+        const links = document.querySelectorAll("header nav a");
+
+        function moveIndicatorTo(el) {
+          const navRect = navbar.getBoundingClientRect();
+          const linkRect = el.getBoundingClientRect();
+          indicator.style.opacity = "1";
+          indicator.style.left = linkRect.left - navRect.left + "px";
+          indicator.style.width = linkRect.width + "px";
+        }
+
+        // Click: move indicator + update active
+        links.forEach((link) => {
+          link.addEventListener("click", () => {
+            links.forEach((l) => l.classList.remove("active"));
+            link.classList.add("active");
+            moveIndicatorTo(link);
+          });
+        });
+
+        // Init: position on active link after layout
+        function initIndicator() {
+          const active = document.querySelector("header nav a.active");
+          if (active) moveIndicatorTo(active);
+        }
+        setTimeout(initIndicator, 250);
+        window.addEventListener("resize", () => setTimeout(initIndicator, 100));
+
+        // Scroll: update active & indicator together
+        window.addEventListener("scroll", () => {
+          setTimeout(() => {
+            const active = document.querySelector("header nav a.active");
+            if (active) moveIndicatorTo(active);
+          }, 60);
+        });
+      })();
 
       function openCodingModal() {
         document.getElementById("codingModal").style.display = "block";
