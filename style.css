@@ -424,6 +424,16 @@ section::before {
 .reverse-track {
   animation: scrollMarqueeReverse 20s linear infinite;
 }
+.others-track {
+  animation: scrollMarquee 18s linear infinite;
+}
+.skill-img-icon {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  background: transparent;
+  display: block;
+}
 .skills-marquee-container:hover .skills-track {
   animation-play-state: paused;
 }
@@ -580,6 +590,7 @@ section::before {
   align-items: center;
   opacity: 0;
   transition: 0.4s ease;
+  z-index: 10;
 }
 .project-card-vertical:hover .img-overlay {
   opacity: 1;
@@ -592,6 +603,9 @@ section::before {
   border-radius: 30px;
   transform: translateY(20px);
   transition: 0.4s ease;
+  z-index: 11;
+  position: relative;
+  cursor: pointer;
 }
 .project-card-vertical:hover .view-btn {
   transform: translateY(0);
